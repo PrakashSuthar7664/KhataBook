@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhaataBook - Create Hisaab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body> 
+    <nav class="w-full h-12 bg-zinc-100 flex justify-between items-center font-mono">
+        <h3 class="text-xl font-semibold pl-2">KhaataBook</h3>
+        <div class="flex gap-2 justify-center items-center pr-2">
+            <a href="/" class="font-semibold">Home</a>
+            <a href="/create">Create New Hisaab</a>
+        </div>
+    </nav>
+
+    <div class="font-mono ml-[2%]">
+        <h3 class="font-semibold mt-5">Create New Hisaab</h3>
+        
+        <form action="/createhisaab" method="POST" class="mt-2   ">
+            <input type="text" name="title" class="placeholder:italic bg-zinc-200 rounded-md block mt-2 p-2 w-1/2" placeholder="Shopping ka hisaab , Ghar ka kharch ....">
+            <textarea id="hisaab" name="hisaab" rows="10" 
+                      placeholder="Write your hisaab..." 
+                      class="placeholder:italic bg-zinc-200 rounded-md block resize-none mt-2 p-2 w-1/2"></textarea>
+            <button  type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Create-Hisaab</button>
+        </form>
+    </div>
+
+</body>
+</html>

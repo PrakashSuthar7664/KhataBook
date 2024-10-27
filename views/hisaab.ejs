@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhaataBook - Hisaab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body> 
+       <nav class="w-full h-12 bg-zinc-100 flex justify-between items-center font-mono">
+        <h3 class="text-xl font-semibold pl-2">KhaataBook</h3>
+
+        <div class="flex gap-2 justify-center items-center pr-2">
+            <a href="/" class="font-semibold">Home</a>
+            <a href="/create"> Create-New-Hisaab </a>
+        </div>
+    </nav>
+
+    <div class="w-[70% ] mt-5 ml-[2%] flex flex-col font-mono">
+        <h1 class="text-xl font-semibold">
+            Hisaab of 
+            <span class="text-blue-500">
+
+                <%= filename.split(".")[0] %> 
+            </span>
+            Date
+        </h1>
+
+        <h3 class="text-regular " style="font-family: cursive;">
+           <span>-</span>
+               <%=  data %>
+        </h3>
+
+
+        <a href="/edit/<%= filename %>" class="text-sm text-zinc-400 mt-[5%]"
+
+    
+        > Edit This Hisaab </a>
+
+        </div>
+
+
+
+</body>
+</html>

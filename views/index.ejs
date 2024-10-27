@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhaataBook</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="w-full h-12 bg-zinc-100 flex justify-between items-center font-mono">
+        <h3 class="text-xl font-semibold pl-2">KhaataBook</h3>
+
+        <div class="flex gap-2 justify-center items-center pr-2">
+            <a href="/" class="font-semibold">Home</a>
+            <a href="/create"> Create-New-Hisaab </a>
+        </div>
+    </nav>
+
+    <div class=" w-[50%]  ml-[2%] mt-10 font-mono">
+
+        <h3 class=" font-bold text-xl">All hisaab Kitaab</h3>
+        <div class="flex flex-col gap-2 mt-5">
+
+            <% 
+
+            if(files.length > 0 ) {
+                %>
+
+               <% files.forEach((file)=>{
+                   %> <div class="bg-blue-500 w-fit gap-12 p-2 rounded-xl font-semibold text-white flex justify-between items-center ">
+                        <a href="/hisaab/<%= file %>" class="flex">
+                           
+
+                                <%= file.split(".")[0] %>
+                            
+        
+                            <div class="flex justify-center items-center ">
+        
+                                <svg class="ml-2 " fill="black" height="15px" width="15px" version="1.1" id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 512 512" xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <path d="M394.501,220.156L189.161,14.817c-19.757-19.756-51.903-19.757-71.662,0c-9.571,9.571-14.843,22.297-14.843,35.832
+                    c0,13.535,5.271,26.26,14.843,35.831l169.508,169.508L117.499,425.496c-9.571,9.571-14.843,22.297-14.843,35.832
+                    c0,13.535,5.271,26.26,14.843,35.831C127.071,506.73,139.795,512,153.331,512c13.535,0,26.259-5.27,35.831-14.841l205.339-205.34
+                    c9.571-9.571,14.843-22.297,14.843-35.831C409.343,242.453,404.072,229.728,394.501,220.156z M380.075,277.393L174.736,482.732
+                    c-5.717,5.718-13.32,8.867-21.405,8.867c-8.085,0-15.689-3.149-21.406-8.867c-5.718-5.718-8.868-13.321-8.868-21.406
+                    c0-8.085,3.15-15.688,8.868-21.406l176.72-176.721c3.983-3.983,3.983-10.441,0-14.424L131.925,72.054
+                    c-5.718-5.718-8.868-13.321-8.868-21.406s3.15-15.688,8.868-21.406c5.717-5.718,13.319-8.867,21.406-8.867
+                    c8.086,0,15.688,3.15,21.405,8.868l205.339,205.338c5.718,5.718,8.868,13.321,8.868,21.406
+                    C388.943,264.072,385.793,271.675,380.075,277.393z" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M365.157,233.423l-14.248-14.043c-4.012-3.953-10.468-3.908-14.424,0.105c-3.953,4.013-3.907,10.47,0.105,14.424
+                                        l14.247,14.043c1.988,1.958,4.574,2.935,7.16,2.935c2.635,0,5.268-1.015,7.265-3.041
+                                        C369.216,243.835,369.17,237.378,365.157,233.423z" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M324.152,192.773L166.709,37.59c-4.013-3.953-10.468-3.908-14.424,0.105c-3.953,4.013-3.908,10.47,0.105,14.424
+                                        l157.443,155.182c1.988,1.958,4.575,2.935,7.16,2.935c2.635,0,5.268-1.015,7.264-3.039
+                                        C328.211,203.185,328.165,196.728,324.152,192.773z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+        
+        
+                        </a>
+        
+        
+                        <div class="flex justify-center items-center gap-2">
+                            <a href="/edit/<%= file %>" class="flex justify-center items-center">
+                                <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+        
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+        
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z"
+                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13"
+                                            stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+        
+                                </svg>
+                            </a>
+                            <a href="/delete/<%= file %>" class="flex justify-center items-center">
+                                <svg width="20px" height="20px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
+        
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+        
+                                    <g id="SVGRepo_iconCarrier">
+        
+                                        <path
+                                            d="M667.8 362.1H304V830c0 28.2 23 51 51.3 51h312.4c28.4 0 51.4-22.8 51.4-51V362.2h-51.3z"
+                                            fill="#CCCCCC" />
+        
+                                        <path
+                                            d="M750.3 295.2c0-8.9-7.6-16.1-17-16.1H289.9c-9.4 0-17 7.2-17 16.1v50.9c0 8.9 7.6 16.1 17 16.1h443.4c9.4 0 17-7.2 17-16.1v-50.9z"
+                                            fill="#CCCCCC" />
+        
+                                        <path
+                                            d="M733.3 258.3H626.6V196c0-11.5-9.3-20.8-20.8-20.8H419.1c-11.5 0-20.8 9.3-20.8 20.8v62.3H289.9c-20.8 0-37.7 16.5-37.7 36.8V346c0 18.1 13.5 33.1 31.1 36.2V830c0 39.6 32.3 71.8 72.1 71.8h312.4c39.8 0 72.1-32.2 72.1-71.8V382.2c17.7-3.1 31.1-18.1 31.1-36.2v-50.9c0.1-20.2-16.9-36.8-37.7-36.8z m-293.5-41.5h145.3v41.5H439.8v-41.5z m-146.2 83.1H729.5v41.5H293.6v-41.5z m404.8 530.2c0 16.7-13.7 30.3-30.6 30.3H355.4c-16.9 0-30.6-13.6-30.6-30.3V382.9h373.6v447.2z"
+                                            fill="#211F1E" />
+        
+                                        <path
+                                            d="M511.6 798.9c11.5 0 20.8-9.3 20.8-20.8V466.8c0-11.5-9.3-20.8-20.8-20.8s-20.8 9.3-20.8 20.8v311.4c0 11.4 9.3 20.7 20.8 20.7zM407.8 798.9c11.5 0 20.8-9.3 20.8-20.8V466.8c0-11.5-9.3-20.8-20.8-20.8s-20.8 9.3-20.8 20.8v311.4c0.1 11.4 9.4 20.7 20.8 20.7zM615.4 799.6c11.5 0 20.8-9.3 20.8-20.8V467.4c0-11.5-9.3-20.8-20.8-20.8s-20.8 9.3-20.8 20.8v311.4c0 11.5 9.3 20.8 20.8 20.8z"
+                                            fill="#211F1E" />
+        
+                                    </g>
+        
+                                </svg>
+        
+                            </a>
+                        </div>
+        
+                    </div>   <%
+                })
+
+                %>
+               
+                <%
+            } else {
+                %> 
+                <h3 class="text-zinc-500">
+                    currently no hisaab   ,   to see something create new hisaab 
+                </h3>
+                <%
+            }
+            
+            %>
+
+           
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
